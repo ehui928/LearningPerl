@@ -1,0 +1,19 @@
+#!/usr/bin/perl -w
+
+use File::Basename;
+
+print "Please enter a file name: \n";
+
+chomp(my $oldname = <STDIN>);
+
+my $basename = basename $oldname;
+my $dirname = dirname $oldname;
+
+$basename =~ s/^/not/;  # add prefix to basename
+
+my $newname = "$dirname/$basename";
+
+rename ($oldname, $newname)
+    or warn "can't rename '$oldname' to '$newname': $! \n";
+
+

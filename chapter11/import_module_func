@@ -1,0 +1,16 @@
+#!/usr/bin/perl -w
+
+# use File::Basename qw/ basename /;  # do not import function names
+
+# use File::Basename ();  # do not import function names
+
+ use File::Basename qw/ /;
+
+$mypath = "/usr/local/bin/perl";
+
+#$mybasename = basename $mypath;
+
+$mybasename = File::Basename::basename $mypath;
+
+print $mybasename;
+print "\n";
